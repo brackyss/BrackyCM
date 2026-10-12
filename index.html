@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BrackyCM.org - Premier Freight Logistics, Cargo Management, Refrigerated, and Full Truckload (FTL) Operations Nationwide.">
+    <title>BrackyCM Cargo Management | Nationwide Logistics & Freight</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0B132B',
+                            slate: '#1C2541',
+                            amber: '#F59E0B',
+                            amberHover: '#D97706',
+                            emerald: '#10B981',
+                            accent: '#38BDF8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 dark:bg-brand-navy/95 backdrop-blur-md border-b border-slate-800 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="bg-amber-500 p-2.5 rounded-xl text-slate-950 group-hover:bg-amber-400 transition-all transform group-hover:scale-105 shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-black tracking-wider text-white">BRACKY</span>
+                            <span class="text-2xl font-black text-amber-500">CM</span>
+                        </div>
+                        <p class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Cargo Management .org</p>
+                    </div>
+                </a>
+
+                <!-- Nav Links Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-semibold hover:text-amber-500 transition-colors">Home</a>
+                    <a href="#calculator" class="text-sm font-semibold hover:text-amber-500 transition-colors">Rate Estimator</a>
+                    <a href="#tracking" class="text-sm font-semibold hover:text-amber-500 transition-colors">Track BOL</a>
+                    <a href="#services" class="text-sm font-semibold hover:text-amber-500 transition-colors">Fleet & Services</a>
+                    <a href="#safety" class="text-sm font-semibold hover:text-amber-500 transition-colors">Safety & DOT</a>
+                    <a href="#contact" class="text-sm font-semibold hover:text-amber-500 transition-colors">Dispatch Desk</a>
+                </div>
+
+                <!-- Right Actions & Theme Switcher -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="theme-toggle-btn" class="p-2.5 rounded-lg bg-slate-800 text-amber-400 hover:text-amber-300 hover:bg-slate-700 transition-all">
+                        <i class="fa-solid fa-sun text-lg hidden dark:block" title="Switch to Light Mode"></i>
+                        <i class="fa-solid fa-moon text-lg block dark:hidden" title="Switch to Dark Mode"></i>
+                    </button>
+
+                    <a href="#calculator" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-xs font-extrabold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-amber-500/20 uppercase tracking-wider">
+                        <i class="fa-solid fa-calculator mr-2"></i> Get Instant Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-slate-800 text-amber-400">
+                        <i class="fa-solid fa-sun text-lg hidden dark:block"></i>
+                        <i class="fa-solid fa-moon text-lg block dark:hidden"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-white focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-amber-500">Home</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-slate-300">Rate Estimator</a>
+            <a href="#tracking" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-slate-300">Track Shipment</a>
+            <a href="#services" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-slate-300">Fleet & Services</a>
+            <a href="#safety" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-slate-300">Safety & DOT</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800 text-slate-300">Dispatch Desk</a>
+            <a href="#calculator" class="w-full text-center block px-4 py-3 rounded-xl font-bold bg-amber-500 text-slate-950">
+                <i class="fa-solid fa-calculator mr-2"></i> Calculate Rate Quote
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-b from-brand-navy via-slate-900 to-slate-950 pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/90 border border-slate-700/80 px-4 py-2 rounded-full shadow-inner">
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-slate-300">DOT Certified Commercial Carrier</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                        Precision Freight & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500">Cargo Management</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Operating premier Dry Vans, Temperature-Controlled Reefers, and Expedited Flatbed fleets nationwide with 99.4% on-time dispatch guarantee.
+                    </p>
+
+                    <!-- Primary Hero Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/20 transform hover:-translate-y-1 flex items-center justify-center space-x-2">
+                            <span>Launch Rate Calculator</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#tracking" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-amber-500"></i>
+                            <span>Track Active BOL</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics Header Cards -->
+                    <div class="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Insurance</p>
+                            <p class="text-sm font-bold text-slate-200 mt-1"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1.5"></i> $500K Cargo</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Coverage</p>
+                            <p class="text-sm font-bold text-slate-200 mt-1"><i class="fa-solid fa-map-location-dot text-amber-400 mr-1.5"></i> 48 States</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dispatch</p>
+                            <p class="text-sm font-bold text-slate-200 mt-1"><i class="fa-solid fa-headset text-sky-400 mr-1.5"></i> 24/7 Support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Quick Search Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative">
+                        <div class="absolute -top-3 right-6 bg-amber-500 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
+                            Live Portal
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-1">Instant BOL Lookup</h3>
+                        <p class="text-xs text-slate-400 mb-6">Enter shipment reference or tracking ID for real-time status.</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label for="hero-tracking-input" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Tracking Code / BOL</label>
+                                <div class="relative">
+                                    <input type="text" id="hero-tracking-input" placeholder="e.g. BCM-84920" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3.5 px-4 pl-11 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 uppercase font-mono text-sm">
+                                    <i class="fa-solid fa-barcode absolute left-3.5 top-4 text-slate-500"></i>
+                                </div>
+                            </div>
+
+                            <button id="hero-track-btn" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <span>Track Cargo Progress</span>
+                            </button>
+
+                            <div class="relative my-4">
+                                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-700"></div></div>
+                                <div class="relative flex justify-center text-[10px] uppercase tracking-widest"><span class="bg-slate-800 px-3 text-slate-400 font-semibold">Immediate Dispatch</span></div>
+                            </div>
+
+                            <a href="tel:8005552722" class="w-full bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold py-3 px-4 rounded-xl transition-all block text-center text-xs font-mono">
+                                <i class="fa-solid fa-phone-volume text-emerald-400 mr-2"></i> Hot Desk: (800) 555-BRACKY
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-800/40 border border-slate-800 p-6 rounded-2xl">
+                <div class="text-center border-r border-slate-800 last:border-0">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-amber-500 font-mono">4,850,000+</p>
+                    <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mt-1">Miles Safely Driven</p>
+                </div>
+                <div class="text-center border-r border-slate-800 last:border-0">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono">99.4%</p>
+                    <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mt-1">On-Time Delivery</p>
+                </div>
+                <div class="text-center border-r border-slate-800 last:border-0">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-amber-500 font-mono">120+</p>
+                    <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mt-1">Active Fleet Units</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono">18,500+</p>
+                    <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mt-1">Completed Loads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rate Calculator Section -->
+    <section id="calculator" class="py-20 bg-slate-950 border-t border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Transparent Pricing</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Dynamic Freight Rate Calculator</h2>
+                <p class="text-slate-400 mt-2 text-sm">Estimate freight rates dynamically based on lane distance, equipment choice, weight, and dispatch urgency.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Calculator Controls -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    
+                    <!-- Equipment Type Buttons -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">1. Select Freight Equipment</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="calc-equipment-group">
+                            <button type="button" data-rate="2.45" data-type="Dry Van (53')" class="calc-type-btn p-3 rounded-xl border border-amber-500 bg-amber-500/10 text-amber-400 font-semibold text-xs text-center transition-all flex flex-col items-center justify-center space-y-2">
+                                <i class="fa-solid fa-truck text-xl"></i>
+                                <span>Dry Van 53'</span>
+                            </button>
+                            <button type="button" data-rate="3.15" data-type="Refrigerated Reefer" class="calc-type-btn p-3 rounded-xl border border-slate-800 bg-slate-800/60 text-slate-400 font-semibold text-xs text-center hover:border-slate-700 transition-all flex flex-col items-center justify-center space-y-2">
+                                <i class="fa-solid fa-snowflake text-xl"></i>
+                                <span>Reefer Temp</span>
+                            </button>
+                            <button type="button" data-rate="2.85" data-type="Flatbed Deck" class="calc-type-btn p-3 rounded-xl border border-slate-800 bg-slate-800/60 text-slate-400 font-semibold text-xs text-center hover:border-slate-700 transition-all flex flex-col items-center justify-center space-y-2">
+                                <i class="fa-solid fa-trailer text-xl"></i>
+                                <span>Flatbed</span>
+                            </button>
+                            <button type="button" data-rate="4.20" data-type="Heavy / Hazmat" class="calc-type-btn p-3 rounded-xl border border-slate-800 bg-slate-800/60 text-slate-400 font-semibold text-xs text-center hover:border-slate-700 transition-all flex flex-col items-center justify-center space-y-2">
+                                <i class="fa-solid fa-weight-hanging text-xl"></i>
+                                <span>Heavy / Hazmat</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Distance Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="calc-distance" class="text-xs font-bold uppercase tracking-wider text-slate-300">2. Haul Distance (Miles)</label>
+                            <span class="text-amber-400 font-mono font-bold text-lg" id="calc-distance-val">650 Miles</span>
+                        </div>
+                        <input type="range" id="calc-distance" min="50" max="3000" step="25" value="650" class="w-full accent-amber-500 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-slate-500 mt-1 font-mono">
+                            <span>50 mi</span>
+                            <span>1,500 mi</span>
+                            <span>3,000 mi</span>
+                        </div>
+                    </div>
+
+                    <!-- Cargo Weight Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="calc-weight" class="text-xs font-bold uppercase tracking-wider text-slate-300">3. Estimated Weight (Lbs)</label>
+                            <span class="text-amber-400 font-mono font-bold text-lg" id="calc-weight-val">24,000 lbs</span>
+                        </div>
+                        <input type="range" id="calc-weight" min="1000" max="45000" step="1000" value="24000" class="w-full accent-amber-500 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                    </div>
+
+                    <!-- Service Priority Option -->
+                    <div>
+                        <label for="calc-urgency" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">4. Service Priority & Speed</label>
+                        <select id="calc-urgency" class="w-full bg-slate-800 border border-slate-700 rounded-xl py-3 px-4 text-slate-200 text-sm focus:outline-none focus:border-amber-500">
+                            <option value="1.0">Standard Ground Transit (2-4 Business Days)</option>
+                            <option value="1.25">Expedited Team Drivers (Accelerated Non-Stop)</option>
+                            <option value="1.50">Guaranteed Urgent / Same-Day Dispatch</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Rate Breakdown Display -->
+                <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-brand-navy border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                    <div class="border-b border-slate-800 pb-4 mb-6">
+                        <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimated Total Rate</span>
+                        <div class="text-4xl sm:text-5xl font-black text-amber-400 font-mono mt-1" id="calc-total-price">$1,838.00</div>
+                        <p class="text-xs text-slate-400 mt-1">*Includes estimated fuel surcharge & toll buffers.</p>
+                    </div>
+
+                    <div class="space-y-3 font-mono text-sm border-b border-slate-800 pb-6 mb-6">
+                        <div class="flex justify-between text-slate-300">
+                            <span class="text-slate-400">Linehaul Rate:</span>
+                            <span id="calc-linehaul">$1,592.50</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span class="text-slate-400">Fuel Surcharge Buffer:</span>
+                            <span id="calc-fuel">$245.50</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span class="text-slate-400">Effective Per-Mile:</span>
+                            <span id="calc-permile" class="text-amber-400">$2.83 / mi</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span class="text-slate-400">Equipment Type:</span>
+                            <span id="calc-equipment-display" class="text-white font-sans font-semibold">Dry Van</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <button id="calc-book-now-btn" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span>Lock Rate & Request Dispatch</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Tracking Simulator Section -->
+    <section id="tracking" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">GPS Cargo Tracking</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Live Active Shipment Tracking</h2>
+                <p class="text-slate-400 mt-2 text-sm">Enter your Bill of Lading (BOL) or tracking ID to query live location, temperature sensors, and arrival ETAs.</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-10">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-grow">
+                        <input type="text" id="track-search-input" value="BCM-84920" placeholder="Enter BOL / Tracking ID (e.g. BCM-84920)" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3.5 px-4 pl-11 text-white font-mono placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                        <i class="fa-solid fa-truck-ramp-box absolute left-4 top-4 text-amber-500"></i>
+                    </div>
+                    <button id="track-search-btn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-8 py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4 mt-3 text-xs text-slate-400 justify-center">
+                    <span>Demo Codes:</span>
+                    <button class="demo-bol-tag text-amber-400 underline hover:text-amber-300 font-mono" data-bol="BCM-84920">BCM-84920 (In Transit)</button>
+                    <button class="demo-bol-tag text-emerald-400 underline hover:text-emerald-300 font-mono" data-bol="BCM-99104">BCM-99104 (Delivered)</button>
+                </div>
+            </div>
+
+            <!-- Tracking Output Container -->
+            <div id="tracking-result-box" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                
+                <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-slate-800 pb-6 gap-4">
+                    <div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-xl font-bold text-white font-mono" id="track-bol-title">BOL: BCM-84920</span>
+                            <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider" id="track-status-badge">In Transit</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1" id="track-cargo-desc">Power Unit #108 (53' Refrigerated Trailer)</p>
+                    </div>
+
+                    <div class="flex items-center space-x-6 text-sm">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider">Estimated Arrival</p>
+                            <p class="font-mono font-bold text-amber-400 text-base" id="track-eta">Oct 14, 2026 - 02:30 PM</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider">Sensor Temperature</p>
+                            <p class="font-mono font-bold text-sky-400 text-base" id="track-temp">-3.5°F (Stable)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Visual -->
+                <div class="py-8">
+                    <div class="flex justify-between items-center mb-2 text-xs text-slate-400 font-mono">
+                        <span id="track-origin">Chicago, IL (Hub #1)</span>
+                        <span id="track-progress-pct" class="text-amber-400 font-bold">65% Completed</span>
+                        <span id="track-destination">Atlanta, GA (DC #4)</span>
+                    </div>
+
+                    <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden p-0.5 border border-slate-700">
+                        <div id="track-progress-bar" class="bg-gradient-to-r from-amber-500 to-emerald-400 h-full rounded-full transition-all duration-1000" style="width: 65%;"></div>
+                    </div>
+                </div>
+
+                <!-- Milestone Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                        <div class="text-emerald-400 text-lg mb-1"><i class="fa-solid fa-circle-check"></i></div>
+                        <p class="text-[10px] text-slate-400 uppercase font-bold">1. Pickup Completed</p>
+                        <p class="text-sm font-semibold text-white mt-0.5">Chicago Freight Terminal</p>
+                        <p class="text-[11px] text-slate-500 font-mono">Oct 12 - 06:15 AM</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                        <div class="text-emerald-400 text-lg mb-1"><i class="fa-solid fa-circle-check"></i></div>
+                        <p class="text-[10px] text-slate-400 uppercase font-bold">2. Inspection & Scale</p>
+                        <p class="text-sm font-semibold text-white mt-0.5">I-65 Weigh Station</p>
+                        <p class="text-[11px] text-slate-500 font-mono">Oct 12 - 01:40 PM</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900 border border-amber-500/40 bg-amber-500/5">
+                        <div class="text-amber-400 text-lg mb-1"><i class="fa-solid fa-truck-moving animate-pulse"></i></div>
+                        <p class="text-[10px] text-amber-400 uppercase font-bold">3. Active Highway Transit</p>
+                        <p class="text-sm font-semibold text-white mt-0.5">En Route I-75 South</p>
+                        <p class="text-[11px] text-slate-400 font-mono">GPS Ping Active</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 opacity-60">
+                        <div class="text-slate-600 text-lg mb-1"><i class="fa-solid fa-warehouse"></i></div>
+                        <p class="text-[10px] text-slate-500 uppercase font-bold">4. Final Delivery</p>
+                        <p class="text-sm font-semibold text-slate-400 mt-0.5">Atlanta Logistics Hub</p>
+                        <p class="text-[11px] text-slate-500 font-mono">Scheduled</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-950 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Logistics Capabilities & Fleet</h2>
+                <p class="text-slate-400 mt-2 text-sm">Commercial transport solutions equipped for diverse supply chain demands.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-truck-front"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Full Truckload (FTL)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Dedicated 53' dry van trailers engineered for maximum cubic capacity and direct regional or coast-to-coast delivery.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Up to 45,000 lbs max weight</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>24/7 Satellite location tracking</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>High-value cargo seal integrity</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Refrigerated Transport</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Temperature-monitored reefers maintaining exact climate specifications for perishables, food product, and pharma.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>-20°F to +70°F climate control</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Continuous sensor temp logs</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>FSMA Sanitary certified</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-6 group-hover:bg-orange-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-trailer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Flatbed & Step Deck</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Specialized open decks tailored for industrial machinery, construction materials, and side-loaded freight.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Step decks & extendables</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Permit & escort handling</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Heavy strapping & tarps</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Less Than Truckload (LTL)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Cost-effective palletized cargo consolidation for smaller shipments needing fast regional cross-dock distribution.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Cross-dock terminal network</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Liftgate pickup capability</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Consolidated tariff savings</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:bg-purple-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Dedicated Dispatch Management</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Contracted fleet management with dedicated dispatchers and account managers aligned with your supply chain.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Single point of contact</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Guaranteed lane capacity</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>KPI performance reports</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-6 group-hover:bg-rose-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Expedited Hot Shot</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Accelerated non-stop team transit for emergency manufacturing parts, critical deadlines, and urgent loads.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-mono">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Dispatch within 60 minutes</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Dual driver team capacity</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Direct hot-shot routing</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & DOT Compliance -->
+    <section id="safety" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">Compliance & Safety</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 leading-tight">
+                        Uncompromising DOT Standards & Safety Protocols
+                    </h2>
+                    <p class="text-slate-300 mt-4 leading-relaxed text-sm">
+                        BrackyCM.org operates under strict USDOT regulations with continuous driver safety scoring, mandatory preventive maintenance, and real-time electronic logging (ELD).
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start space-x-4 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 text-2xl mt-0.5"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Satisfactory FMCSA Rating</h4>
+                                <p class="text-xs text-slate-400 mt-1">Compliant scores in vehicle maintenance, hours of service (HOS), and driver safety checks.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <div class="text-amber-400 text-2xl mt-0.5"><i class="fa-solid fa-leaf"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Eco-Friendly Fleet Initiatives</h4>
+                                <p class="text-xs text-slate-400 mt-1">Aerodynamic tractor side skirts, low-rolling resistance tires, and modern auxiliary power units (APU).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carrier Verification Widget -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 relative shadow-2xl">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center justify-between">
+                        <span>Carrier Credential Summary</span>
+                        <i class="fa-solid fa-certificate text-amber-500"></i>
+                    </h3>
+
+                    <div class="space-y-4 font-mono text-xs">
+                        <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                            <span class="text-slate-400">USDOT Operating Status:</span>
+                            <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">Active / Authorized</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                            <span class="text-slate-400">Primary Cargo Coverage:</span>
+                            <span class="text-white">$500,000 Insured</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                            <span class="text-slate-400">Liability Insurance Limit:</span>
+                            <span class="text-white">$1,000,000 Combined</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                            <span class="text-slate-400">ELD Telemetry System:</span>
+                            <span class="text-sky-400">24/7 Integrated</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-slate-400">Hazmat Materials Permit:</span>
+                            <span class="text-amber-400">Classes 2-9 Authorized</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                        <p class="text-[11px] text-slate-500">Need a Rate Packet or Certificate of Insurance (COI)? Contact dispatch@brackycm.org.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dispatch & Load Booking Form Section -->
+    <section id="contact" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Direct Dispatch</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-3">Book Cargo Dispatch</h2>
+                        <p class="text-slate-400 text-sm mt-2">Submit your dispatch details to reserve tractor-trailer equipment and assign drivers.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">24/7 Dispatch Hotline</p>
+                                <p class="text-base font-bold text-white font-mono">(800) 555-BRACKY</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Email Rate Confirmations</p>
+                                <p class="text-base font-bold text-white font-mono">dispatch@brackycm.org</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Official Domain</p>
+                                <p class="text-base font-bold text-white font-mono">BrackyCM.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                    <form id="dispatch-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="form-shipper" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Company / Shipper</label>
+                                <input type="text" required id="form-shipper" placeholder="Acme Logistics Inc." class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="form-email" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Contact Email</label>
+                                <input type="email" required id="form-email" placeholder="dispatch@acme.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="form-origin" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Origin City & Zip</label>
+                                <input type="text" required id="form-origin" placeholder="e.g. Chicago, IL 60601" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="form-destination" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Destination City & Zip</label>
+                                <input type="text" required id="form-destination" placeholder="e.g. Atlanta, GA 30301" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="form-date" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Pickup Date</label>
+                                <input type="date" required id="form-date" class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="form-quoted-rate" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Quoted Rate Estimate</label>
+                                <input type="text" id="form-quoted-rate" readonly placeholder="Auto-transferred from calculator" class="w-full bg-slate-950/80 border border-slate-800 text-amber-400 font-mono font-bold rounded-xl py-3 px-4 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-notes" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Cargo Details / Requirements</label>
+                            <textarea id="form-notes" rows="3" placeholder="Commodity type, temp set point, dock hours, special instructions..." class="w-full bg-slate-950 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 text-base flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Submit Dispatch Order</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 text-center shadow-2xl relative">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/40">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Dispatch Order Confirmed!</h3>
+            <p class="text-slate-300 text-sm mt-2">Your rate quote hold and dispatch reservation has been submitted to central operations.</p>
+
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 my-6 text-left text-xs font-mono space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Order Ref:</span>
+                    <span class="text-amber-400 font-bold" id="modal-req-id">REQ-92841</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Shipper Email:</span>
+                    <span class="text-white" id="modal-shipper-email">-</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Rate Hold:</span>
+                    <span class="text-emerald-400 font-bold" id="modal-rate-val">-</span>
+                </div>
+            </div>
+
+            <button id="modal-close-btn" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition-all">
+                Close & Return
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-truck-fast text-amber-500 text-xl"></i>
+                        <span class="text-xl font-black text-white">BRACKY<span class="text-amber-500">CM</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        BrackyCM.org operates nationwide cargo management, dedicated full truckload, and temperature-controlled logistics networks across North America.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-amber-500 transition-colors">Home</a></li>
+                        <li><a href="#calculator" class="hover:text-amber-500 transition-colors">Rate Calculator</a></li>
+                        <li><a href="#tracking" class="hover:text-amber-500 transition-colors">Track Cargo</a></li>
+                        <li><a href="#services" class="hover:text-amber-500 transition-colors">Fleet Equipment</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><span class="text-slate-400">Dry Van Full Truckload (FTL)</span></li>
+                        <li><span class="text-slate-400">Refrigerated Climate Transit</span></li>
+                        <li><span class="text-slate-400">Flatbed & Oversized Cargo</span></li>
+                        <li><span class="text-slate-400">Expedited Hot Shot Services</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Operations Contact</h4>
+                    <p class="text-xs text-slate-400 mb-2">Dispatch Hotline: (800) 555-BRACKY</p>
+                    <p class="text-xs text-slate-400 mb-2">Email: dispatch@brackycm.org</p>
+                    <p class="text-xs font-mono text-amber-500 mt-3">Domain: BrackyCM.org</p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 BrackyCM.org Cargo Management Organization. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300">Terms of Carrier Service</a>
+                    <a href="#" class="hover:text-slate-300">FMCSA Certification</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Interactive Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Theme Switcher Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle-btn');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+
+            function toggleTheme() {
+                document.documentElement.classList.toggle('dark');
+            }
+
+            if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+            if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+            // --- Mobile Navigation Menu ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Dynamic Freight Rate Estimator Calculation ---
+            let selectedEquipmentRate = 2.45;
+            let selectedEquipmentName = 'Dry Van 53\'';
+
+            const equipmentBtns = document.querySelectorAll('.calc-type-btn');
+            const distanceInput = document.getElementById('calc-distance');
+            const distanceVal = document.getElementById('calc-distance-val');
+            const weightInput = document.getElementById('calc-weight');
+            const weightVal = document.getElementById('calc-weight-val');
+            const urgencySelect = document.getElementById('calc-urgency');
+
+            const totalPriceDisplay = document.getElementById('calc-total-price');
+            const linehaulDisplay = document.getElementById('calc-linehaul');
+            const fuelDisplay = document.getElementById('calc-fuel');
+            const perMileDisplay = document.getElementById('calc-permile');
+            const equipmentDisplay = document.getElementById('calc-equipment-display');
+            const formQuotedRateInput = document.getElementById('form-quoted-rate');
+
+            function updateCalculator() {
+                const miles = parseInt(distanceInput.value, 10);
+                const weight = parseInt(weightInput.value, 10);
+                const urgencyMultiplier = parseFloat(urgencySelect.value);
+
+                distanceVal.textContent = miles.toLocaleString() + ' Miles';
+                weightVal.textContent = weight.toLocaleString() + ' lbs';
+
+                // Calculation formulas
+                const weightFactor = 1 + ((weight - 10000) / 100000);
+                const linehaulCost = miles * selectedEquipmentRate * urgencyMultiplier * weightFactor;
+                const fuelSurcharge = miles * 0.38;
+                const totalCost = linehaulCost + fuelSurcharge;
+
+                const perMileAvg = totalCost / miles;
+
+                // Format UI Outputs
+                totalPriceDisplay.textContent = '$' + totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                linehaulDisplay.textContent = '$' + linehaulCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                fuelDisplay.textContent = '$' + fuelSurcharge.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                perMileDisplay.textContent = '$' + perMileAvg.toFixed(2) + ' / mi';
+                equipmentDisplay.textContent = selectedEquipmentName;
+
+                // Auto Transfer to Booking Form
+                if (formQuotedRateInput) {
+                    formQuotedRateInput.value = '$' + totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' (' + selectedEquipmentName + ')';
+                }
+            }
+
+            // Equipment Toggle Handlers
+            equipmentBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    equipmentBtns.forEach(b => {
+                        b.classList.remove('border-amber-500', 'bg-amber-500/10', 'text-amber-400');
+                        b.classList.add('border-slate-800', 'bg-slate-800/60', 'text-slate-400');
+                    });
+                    btn.classList.remove('border-slate-800', 'bg-slate-800/60', 'text-slate-400');
+                    btn.classList.add('border-amber-500', 'bg-amber-500/10', 'text-amber-400');
+
+                    selectedEquipmentRate = parseFloat(btn.dataset.rate);
+                    selectedEquipmentName = btn.dataset.type;
+                    updateCalculator();
+                });
+            });
+
+            distanceInput.addEventListener('input', updateCalculator);
+            weightInput.addEventListener('input', updateCalculator);
+            urgencySelect.addEventListener('change', updateCalculator);
+
+            // Initial calculation run
+            updateCalculator();
+
+            // Link Calculator Book Button to Contact Scroll
+            document.getElementById('calc-book-now-btn').addEventListener('click', () => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // --- Tracking System Demo Data & Search ---
+            const trackingData = {
+                'BCM-84920': {
+                    status: 'In Transit',
+                    badgeClass: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+                    cargo: 'Power Unit #108 (53\' Refrigerated Trailer)',
+                    origin: 'Chicago, IL (Hub #1)',
+                    destination: 'Atlanta, GA (DC #4)',
+                    eta: 'Oct 14, 2026 - 02:30 PM',
+                    temp: '-3.5°F (Stable)',
+                    progress: 65
+                },
+                'BCM-99104': {
+                    status: 'Delivered',
+                    badgeClass: 'bg-sky-500/20 text-sky-400 border-sky-500/30',
+                    cargo: 'Power Unit #214 (53\' Dry Van)',
+                    origin: 'Dallas, TX',
+                    destination: 'Phoenix, AZ',
+                    eta: 'Oct 11, 2026 - Delivered',
+                    temp: 'Ambient',
+                    progress: 100
+                }
+            };
+
+            function searchTracking(bol) {
+                const cleanBol = bol.trim().toUpperCase();
+                const data = trackingData[cleanBol] || {
+                    status: 'In Transit (On Schedule)',
+                    badgeClass: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+                    cargo: 'Commercial Freight Trailer',
+                    origin: 'Regional Origin Terminal',
+                    destination: 'Destination Distribution Hub',
+                    eta: 'Oct 15, 2026 - 10:00 AM',
+                    temp: 'N/A',
+                    progress: 50
+                };
+
+                document.getElementById('track-bol-title').textContent = 'BOL: ' + (cleanBol || 'BCM-84920');
+                document.getElementById('track-status-badge').textContent = data.status;
+                document.getElementById('track-status-badge').className = 'text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wider ' + data.badgeClass;
+                document.getElementById('track-cargo-desc').textContent = data.cargo;
+                document.getElementById('track-origin').textContent = data.origin;
+                document.getElementById('track-destination').textContent = data.destination;
+                document.getElementById('track-eta').textContent = data.eta;
+                document.getElementById('track-temp').textContent = data.temp;
+                document.getElementById('track-progress-pct').textContent = data.progress + '% Completed';
+                document.getElementById('track-progress-bar').style.width = data.progress + '%';
+            }
+
+            document.getElementById('track-search-btn').addEventListener('click', () => {
+                const val = document.getElementById('track-search-input').value;
+                searchTracking(val);
+            });
+
+            document.getElementById('hero-track-btn').addEventListener('click', () => {
+                const val = document.getElementById('hero-tracking-input').value || 'BCM-84920';
+                searchTracking(val);
+                document.getElementById('tracking').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.querySelectorAll('.demo-bol-tag').forEach(tag => {
+                tag.addEventListener('click', () => {
+                    const bol = tag.dataset.bol;
+                    document.getElementById('track-search-input').value = bol;
+                    searchTracking(bol);
+                });
+            });
+
+            // --- Dispatch Form Booking Submission ---
+            const dispatchForm = document.getElementById('dispatch-form');
+            const bookingModal = document.getElementById('booking-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            dispatchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById('form-email').value;
+                const rateVal = formQuotedRateInput.value || '$1,838.00';
+                const randomReqId = 'REQ-' + Math.floor(10000 + Math.random() * 90000);
+
+                document.getElementById('modal-req-id').textContent = randomReqId;
+                document.getElementById('modal-shipper-email').textContent = email;
+                document.getElementById('modal-rate-val').textContent = rateVal;
+
+                bookingModal.classList.remove('hidden');
+            });
+
+            modalCloseBtn.addEventListener('click', () => {
+                bookingModal.classList.add('hidden');
+                dispatchForm.reset();
+                updateCalculator();
+            });
+
+            // Set default date picker to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('form-date').value = tomorrow.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>
